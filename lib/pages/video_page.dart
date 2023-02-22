@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:sizer/sizer.dart';
 
 class VideoPage extends StatefulWidget {
   final String name, mediaUrl;

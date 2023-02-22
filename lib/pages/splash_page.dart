@@ -3,7 +3,7 @@ import 'package:app_tesis/pages/home_page.dart';
 import 'package:app_tesis/pages/videos_page.dart';
 import 'package:app_tesis/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sizer/sizer.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashPage extends StatefulWidget {
@@ -22,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const VideosPage(),
+          builder: (context) => HomePage(),
         ),
       ),
     );
@@ -32,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: CustomColors.green,
+        backgroundColor: (Colors.deepPurple[400]),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,7 +48,7 @@ class _SplashPageState extends State<SplashPage> {
               ),
               Lottie.asset(
                 'assets/animations/animation_splash.json',
-                height: 120.h,
+                height: 30.h,
               ),
             ],
           ),

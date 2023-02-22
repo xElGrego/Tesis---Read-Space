@@ -7,25 +7,28 @@ class VideosPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Hola"),
-      ),
-      body: ListView(
-        children: dataVideos.map((e) {
-          return GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => VideoPage(
-                  name: e.name,
-                  mediaUrl: e.mediaUrl,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Videos"),
+          backgroundColor: Colors.deepPurple[400],
+        ),
+        body: ListView(
+          children: dataVideos.map((e) {
+            return GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => VideoPage(
+                    name: e.name,
+                    mediaUrl: e.mediaUrl,
+                  ),
                 ),
               ),
-            ),
-            child: Image.network(e.thumbUrl),
-          );
-        }).toList(),
+              child: Image.network(e.thumbUrl),
+            );
+          }).toList(),
+        ),
       ),
     );
   }
