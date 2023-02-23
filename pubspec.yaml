@@ -36,10 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   sizer: ^2.0.15
   lottie: ^2.1.0
-  google_fonts: ^3.0.1
   youtube_player_flutter: ^8.1.2
   url_launcher:
   carousel_slider: ^4.2.1
+  smooth_page_indicator: ^1.0.1
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
     - assets/photos/
     - assets/books/
     - assets/
+    - assets/home/
     - assets/animations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -80,7 +82,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy-Heavy.ttf
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

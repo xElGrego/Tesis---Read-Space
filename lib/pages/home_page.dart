@@ -7,7 +7,14 @@ import '../utils/colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final List<String> imgList = [
+    'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
+    'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
+    'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
+    'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
+    'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
+    'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +23,7 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: CustomColors.white,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 2.h),
             Padding(
@@ -28,16 +36,16 @@ class HomePage extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         "Read Space",
-                        style: GoogleFonts.openSans(
+                        style: GoogleFonts.alegreya(
                           textStyle: TextStyle(
                             color: Colors.deepPurple[400],
-                            fontSize: 20.sp,
+                            fontSize: 24.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       SizedBox(height: 0.1.h),
-                      Text(
+                      /*  Text(
                         "Inicio",
                         style: GoogleFonts.openSans(
                           textStyle: TextStyle(
@@ -46,7 +54,7 @@ class HomePage extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ),
+                      ), */
                     ],
                   ),
                   /*  Icon(
@@ -66,21 +74,20 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 4.h),
-            Flexible(
+            Container(
+              height: 60.h,
               child: GridView.count(
                   childAspectRatio: 1.0,
                   padding: EdgeInsets.only(left: 5.w, right: 5.w),
                   crossAxisCount: 2,
                   crossAxisSpacing: 2.w,
-                  mainAxisSpacing: 1.h,
+                  mainAxisSpacing: 4.h,
                   children: dataItem.map((data) {
                     return GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, data.route);
                       },
                       child: Container(
-                        height: 14.h,
-                        width: 24.w,
                         decoration: BoxDecoration(
                           color: Color(color),
                           borderRadius: BorderRadius.circular(10),
@@ -91,6 +98,7 @@ class HomePage extends StatelessWidget {
                             Image.asset(
                               data.img,
                               width: 10.w,
+                              height: 7.h,
                             ),
                             SizedBox(height: 0.1.h),
                             Text(
@@ -131,6 +139,18 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   }).toList()),
+            ),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                height: 20.h,
+                child: Image.asset(
+                  'assets/home/fondo.jpg',
+                  fit: BoxFit.fill,
+                  color: Colors.white.withOpacity(0.7),
+                  colorBlendMode: BlendMode.modulate,
+                ),
+              ),
             ),
           ],
         ),

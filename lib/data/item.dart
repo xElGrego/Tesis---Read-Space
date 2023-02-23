@@ -18,23 +18,23 @@ List<Items> dataItem = [
       subtitle: "Descripción de libros",
       event: " ",
       route: '/libros',
-      img: "assets/photos/calendar.png"),
+      img: "assets/home/book.png"),
   Items(
       title: "Preguntas",
       subtitle: "Descripción de Preguntas",
       event: " ",
       route: '/preguntas',
-      img: "assets/photos/food.png"),
+      img: "assets/home/question.png"),
   Items(
       title: "Videos",
       subtitle: "Descripción de Videos",
       event: " ",
       route: '/videos',
-      img: "assets/photos/map.png"),
+      img: "assets/home/video.png"),
   Items(
       title: "Actividades",
       subtitle: "Descripción de liveworsheep",
       event: " ",
       route: '/actividades',
-      img: "assets/photos/festival.png")
+      img: "assets/home/activities.png")
 ];
