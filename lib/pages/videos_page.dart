@@ -1,6 +1,8 @@
 import 'package:app_tesis/pages/video_page.dart';
 import 'package:flutter/material.dart';
-import '../data/videos.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
+import '../data/videos_model.dart';
 
 class VideosPage extends StatelessWidget {
   const VideosPage({Key? key}) : super(key: key);
@@ -15,17 +17,34 @@ class VideosPage extends StatelessWidget {
         ),
         body: ListView(
           children: dataVideos.map((e) {
-            return GestureDetector(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => VideoPage(
-                    name: e.name,
-                    mediaUrl: e.mediaUrl,
+            return Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+              child: Column(
+                children: [
+                  Text(
+                    e.name,
+                    style: GoogleFonts.alegreya(
+                      fontSize: 16.sp,
+                      color: Colors.black,
+                      letterSpacing: 1.2,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
+                  SizedBox(height: 1.h),
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VideoPage(
+                          name: e.name,
+                          mediaUrl: e.mediaUrl,
+                        ),
+                      ),
+                    ),
+                    child: Image.asset(e.thumbUrl),
+                  ),
+                ],
               ),
-              child: Image.network(e.thumbUrl),
             );
           }).toList(),
         ),

@@ -1,10 +1,6 @@
-import 'dart:async';
 import 'package:app_tesis/pages/home_page.dart';
-import 'package:app_tesis/pages/videos_page.dart';
-import 'package:app_tesis/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -63,7 +59,7 @@ class _SplashPageState extends State<SplashPage> {
                         SizedBox(height: 4.h),
                         Text(
                           textAlign: TextAlign.center,
-                          "Segunda descripcion un poco mas largo para detallar una acción de la cantidad de recursos que existiran en ese libro.",
+                          "Lee los libros más importantes de la literatura ecuatoriana.",
                           style: GoogleFonts.alegreya(
                             fontSize: 12.sp,
                             color: Colors.black,
@@ -85,7 +81,7 @@ class _SplashPageState extends State<SplashPage> {
                           height: 22.h,
                         ),
                         Text(
-                          "Lee tus libros favoritos",
+                          "Actividades divertidas",
                           style: GoogleFonts.alegreya(
                             fontSize: 25.sp,
                             color: Colors.black,
@@ -94,7 +90,7 @@ class _SplashPageState extends State<SplashPage> {
                         SizedBox(height: 4.h),
                         Text(
                           textAlign: TextAlign.center,
-                          "Segunda descripcion un poco mas largo para detallar una acción de la cantidad de recursos que existiran en ese libro.",
+                          "Lee y aprende mientras realizas las actividades que hay en las multiples secciones.",
                           style: GoogleFonts.alegreya(
                             fontSize: 12.sp,
                             color: Colors.black,
@@ -116,7 +112,7 @@ class _SplashPageState extends State<SplashPage> {
                           height: 22.h,
                         ),
                         Text(
-                          "Lee tus libros favoritos",
+                          "Videos interactivos",
                           style: GoogleFonts.alegreya(
                             fontSize: 25.sp,
                             color: Colors.black,
@@ -125,7 +121,7 @@ class _SplashPageState extends State<SplashPage> {
                         SizedBox(height: 4.h),
                         Text(
                           textAlign: TextAlign.center,
-                          "Segunda descripcion un poco mas largo para detallar una acción de la cantidad de recursos que existiran en ese libro.",
+                          "Encontrarás videos para reforzar el conocimiento y seguir aprendiendo.",
                           style: GoogleFonts.alegreya(
                             fontSize: 12.sp,
                             color: Colors.black,

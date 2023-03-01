@@ -2,7 +2,6 @@ import 'package:app_tesis/pages/question_page.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import '../data/libros_model.dart';
-import '../data/question/questionEmancipada.dart';
 import '../data/question_model.dart';
 
 class QuestionsPage extends StatefulWidget {

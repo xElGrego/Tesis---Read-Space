@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:sizer/sizer.dart';
 
 class VideoPage extends StatefulWidget {
   final String name, mediaUrl;
@@ -48,30 +47,33 @@ class _VideoPageState extends State<VideoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          widget.name,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.deepPurple[400],
+          title: Text(
+            widget.name,
+          ),
         ),
-      ),
-      body: Column(
-        children: [
-          /* SizedBox(height: 8.h), */
-          Expanded(
-            child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: YoutubePlayer(
-                controller: _controller,
-                showVideoProgressIndicator: true,
-                onReady: () => debugPrint("XD"),
+        body: Column(
+          children: [
+            /* SizedBox(height: 8.h), */
+            Expanded(
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: YoutubePlayer(
+                  controller: _controller,
+                  showVideoProgressIndicator: true,
+                  onReady: () => debugPrint("XD"),
+                ),
+                /* child: BetterPlayer(
+                  key: _beetterPlayerKey,
+                  controller: _betterPlayerController,
+                ), */
               ),
-              /* child: BetterPlayer(
-                key: _beetterPlayerKey,
-                controller: _betterPlayerController,
-              ), */
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

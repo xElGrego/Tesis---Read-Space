@@ -1,12 +1,8 @@
-import 'dart:math';
-
 import 'package:app_tesis/data/libros_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../components/libro_widget.dart';
 
 class LibrosPage extends StatefulWidget {
   const LibrosPage({Key? key}) : super(key: key);
@@ -202,7 +198,6 @@ class _LibrosPageState extends State<LibrosPage> {
                         enlargeCenterPage: true,
                         onPageChanged: (index, reason) {
                           setState(() {
-                            print("Set state + ${index}");
                             _current = index;
                           });
                         }),
@@ -213,6 +208,4 @@ class _LibrosPageState extends State<LibrosPage> {
       ),
     );
   }
-
-  Future<void> _launchUrl() async {}
 }
